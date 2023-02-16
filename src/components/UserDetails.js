@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { fakeUserData } from "../api";
 import { useDispatch } from "react-redux";
-import { addUser } from "../store/slice/userSlice";
+import { addUser, deleteAllUser } from "../store/slice/userSlice";
 import DisplayUsers from "./DisplayUsers";
 const UserDetails = () => {
   const dispatch = useDispatch();
@@ -10,6 +10,9 @@ const UserDetails = () => {
   const addNewUser = () => {
     const data = fakeUserData();
     dispatch(addUser(data));
+  };
+  const deleteAll = () => {
+    dispatch(deleteAllUser());
   };
   return (
     <Wrapper>
@@ -27,6 +30,9 @@ const UserDetails = () => {
           </ul>
         </div>
         <hr />
+        <div>
+          <button onClick={deleteAll}>Delete all user</button>
+        </div>
       </div>
     </Wrapper>
   );
