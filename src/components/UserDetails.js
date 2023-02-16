@@ -1,18 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-
+import { fakeUserData } from "../api";
+import { useDispatch } from "react-redux";
+import { addUser } from "../store/slice/userSlice";
+import DisplayUsers from "./DisplayUsers";
 const UserDetails = () => {
+  const dispatch = useDispatch();
+
+  const addNewUser = () => {
+    const data = fakeUserData();
+    dispatch(addUser(data));
+  };
   return (
     <Wrapper>
       <div className="content">
         <div className="admin-table">
           <div className="admin-subtitle">List of User Details</div>
-          <button className="btn add-btn">Add New Users</button>
+          <button className="btn add-btn" onClick={addNewUser}>
+            Add New Users
+          </button>
         </div>
-        <ul>
-          {/* <li>Hi</li>
-          <li>Hii</li> */}
-        </ul>
+
+        <div>
+          <ul>
+            <DisplayUsers />
+          </ul>
+        </div>
         <hr />
       </div>
     </Wrapper>
