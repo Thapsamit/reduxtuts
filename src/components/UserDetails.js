@@ -4,6 +4,7 @@ import { fakeUserData } from "../api";
 import { useDispatch } from "react-redux";
 import { addUser, deleteAllUser } from "../store/slice/userSlice";
 import DisplayUsers from "./DisplayUsers";
+import { clearAllUsers } from "../store/actions";
 const UserDetails = () => {
   const dispatch = useDispatch();
 
@@ -12,7 +13,8 @@ const UserDetails = () => {
     dispatch(addUser(data));
   };
   const deleteAll = () => {
-    dispatch(deleteAllUser());
+    //dispatch(deleteAllUser()); // previously used slice's reducers.
+    dispatch(clearAllUsers()); // now using actions
   };
   return (
     <Wrapper>
