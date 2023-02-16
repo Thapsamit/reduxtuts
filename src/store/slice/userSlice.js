@@ -8,8 +8,12 @@ export const userSlice = createSlice({
     addUser(state, action) {
       state.push(action.payload);
     },
-    removeUser(state, action) {},
-    deleteAllUser(state, action) {},
+    removeUser(state, action) {
+      state.splice(action.payload, 1);
+    },
+    deleteAllUser(state, action) {
+      state.splice(0, state.length);
+    },
   },
 });
 
