@@ -22,6 +22,11 @@ Redux Toolkit includes these APIs:
 
 - This is a function that takes name,reducers and initial state and allows this function to call by any component same as dispatching action
 
+# To access state :-
+
+- need usedispatch and action creator functions
+- action creator basically we can write like userSlice.actions to make all the reducer functions available to be use by any component
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
