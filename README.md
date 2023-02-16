@@ -18,6 +18,10 @@ Redux Toolkit includes these APIs:
 - createEntityAdapter: generates a set of reusable reducers and selectors to manage normalized data in the store
   The createSelector utility from the Reselect library, re-exported for ease of use.
 
+# createSlice()
+
+- This is a function that takes name,reducers and initial state and allows this function to call by any component same as dispatching action
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
